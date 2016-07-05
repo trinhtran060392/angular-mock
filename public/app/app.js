@@ -11,7 +11,7 @@ define([
     'ui.router',
 
     'app.layout',
-    'app.student'
+    'app.cfn'
   ]);
 
   couchPotato.configureApp(app);

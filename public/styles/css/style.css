@@ -1,329 +1,432 @@
+@charset "UTF-8";
+@import url(normalize.css);
 /**
- * PRESENTATION STYLESHEET
- * ----------------------------------------------------------------------------
+ * Base Rules
  */
-
-/*
-
-
-       PLEASE NOTE: 
-       ============
-
-       THIS FILE IS NOT PART OF THE *REQUIRED FONT ICON FILES* 
-       THIS FILE IS USED TO STYLE THE ICON DEMO TEMPLATE FOUND AT DEMO.HTML
-
-
-
-*/
-
-*,
-*:before,
-*:after {
-	border: 0 none;
-	margin: 0;
-	padding: 0;
-	font-size: 100%;
-
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-	width: 12px;
-	height: 12px;
-}
-::-webkit-scrollbar-track {
-	background-color: rgba(255, 255, 255, 0.1);
-	-webkit-border-radius: 5px;
-}
-::-webkit-scrollbar-thumb {
-	background-color: rgba(0, 0, 0, 0.4);
-	-webkit-border-radius: 6px;
-}
-::-webkit-scrollbar-thumb:hover {
-	background-color: rgba(0, 0, 0, 0.6);
-}
-
-section, 
-header, 
-footer {
-	display: block;
-	position: relative;
-}
+html {
+  font-size: 62.5%; }
 
 body {
-	background-color: #fff;
-	color: #0e8a65;
-	font-family: "Helvetica Neue", Helvetica, "DejaVu Sans", Arial, sans-serif;
-	line-height: 1.5;
-	font-size: 1em;
-}
+  line-height: 1.5;
+  font-size: 1.4rem;
+  font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  color: #4A4B4D;
+  font-weight: 300;
+  background-color: #fff; }
 
+a {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  color: #333;
+  text-decoration: underline; }
+  a:hover {
+    text-decoration: none;
+    color: #89ABE3; }
 
-section:after,
-.masthead:after {
-	content: '';
-	pointer-events: none;
-	position: absolute;
-		bottom: -1.5em;
-		left: 50%;
-		z-index: 10;
-	width: 3em;
-	height: 3em;
+p, ul, li {
+  margin: 0;
+  padding: 0; }
 
-	background: inherit;
-	-webkit-transform: translateX(-50%) rotate(45deg);
-	transform: translateX(-50%) rotate(45deg);
-}
+p {
+  font-size: 1.6rem;
+  line-height: 28px;
+  margin-bottom: 2em;
+  text-align: justify; }
 
-section header {
-	position: relative;
-}
+h1 {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #4A4B4D;
+  font-weight: 300;
+  margin: 60px 0 30px 0;
+  text-shadow: 1px 1px 0px #fff; }
 
-section header:after {
-	background-color: transparent;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: inherit;
-	content: '';
-	position: absolute;
-		left: 40%;
-		bottom: 0;
-	width: 20%;
-	height: 0;
-}
+h2 {
+  font-size: 2.1rem;
+  font-weight: 300;
+  margin: 40px 0 20px 0;
+  text-shadow: 1px 1px 0px #fff; }
 
-.masthead {
-	background-color: #fff;
-	padding: 3em;
-	position: relative;
-	text-align: center;
-}
+h1 + h2 {
+  margin-top: 20px; }
 
-.colophon {
-	padding: 4.5em 3em;
-	position: relative;
-}
-.colophon .group {
-	padding: 3em;
-	text-align: center;
-}
+/**
+ * State Rules
+ */
+/**
+ * Module Rules
+ */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background: url(../images/avatar.jpg) center center no-repeat;
+  background-size: contain; }
+  .avatar.avatar-small {
+    width: 32px;
+    height: 32px; }
 
-.masthead hgroup,
-.colophon .group {
-	margin: auto;
-	padding: 0 10%;
-	position: absolute;
-	top: 50%;
-	left: 0%;
-	right: 0%;
-	-webkit-transform: translate(0%,-50%);
-	    -ms-transform: translate(0%,-50%);
-	        transform: translate(0%,-50%);
-}
+.btn {
+  display: block;
+  border: 1px solid #89ABE3;
+  text-decoration: none;
+  color: #89ABE3;
+  cursor: pointer; }
 
-.masthead h1 {
-	font-size: 2.25em;
-	font-weight: bolder;
-	line-height: 1.5;
-	margin-bottom: 1em;
-	text-transform: uppercase;
-}
+.btn-small {
+  width: 160px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 1.2rem; }
 
-.masthead h2 {
-	font-size: 1em;
-	font-weight: lighter;
-	letter-spacing: 6px;
-	text-transform: uppercase;
-}
+.wrapper {
+  position: relative;
+  width: 1024px;
+  margin: 0 auto;
+  zoom: 1; }
+  .wrapper:before, .wrapper:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .wrapper:after {
+    clear: both; }
 
-.glyphs, 
-.classes {
-	margin-left: -1.5em;
-	padding: 4.5em 3em;
-}
+header {
+  height: 84px;
+  background-color: #4A4B4D;
+  color: #fff; }
+  header h1 {
+    margin: 0;
+    padding: 10px 0 0 0;
+    float: left; }
 
-.glyphs header,
-.classes header {
-	margin-bottom: 2.25em;
-	padding-bottom: 2.25em;
-	text-align: center;
-	text-transform: uppercase;
-}
+.user-info-left {
+  position: relative;
+  padding: 50px 0 50px 140px;
+  float: left; }
+  .user-info-left .avatar {
+    position: absolute;
+    top: 50px;
+    left: 0px; }
+  .user-info-left .user-name {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 48px;
+    position: relative;
+    margin-bottom: 10px; }
+    .user-info-left .user-name:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100px;
+      height: 1px;
+      background-color: #89ABE3; }
 
-.glyphs h1,
-.classes h1 {
-	font-size: 2.25em;
-	font-weight: bolder;
-	line-height: 1.5;
-}
+.user-info-right {
+  position: relative;
+  padding: 50px 0;
+  float: right; }
+  .user-info-right .torophy {
+    font-size: 3.0rem;
+    font-weight: 900;
+    margin-bottom: 20px; }
+    .user-info-right .torophy::before {
+      position: relative;
+      content: '';
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: middle;
+      top: -4px;
+      width: 38px;
+      height: 42px;
+      background: url(../images/torophy.png);
+      background-size: contain; }
+  .user-info-right .btn::before {
+    position: relative;
+    top: -2px;
+    content: '';
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    background: url(../images/icon-edit.png);
+    background-size: contain; }
 
-.glyphs h2,
-.classes h2 {
-	font-size: 1em;
-	font-weight: normal;
-	letter-spacing: 3px;
-	text-transform: uppercase;
-}
+.menu {
+  border-top: 1px solid #EFEEE9; }
+  .menu ul {
+    height: 50px;
+    overflow: hidden; }
+  .menu li {
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    position: relative;
+    float: left;
+    width: 160px;
+    list-style: none;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .menu li::before {
+      content: '';
+      display: inline-block;
+      margin-right: 15px;
+      vertical-align: middle;
+      position: relative;
+      top: -2px; }
+    .menu li:first-child::before {
+      width: 22px;
+      height: 20px;
+      background: url(../images/icon-activity.png);
+      background-size: contain; }
+    .menu li:nth-child(2)::before {
+      width: 26px;
+      height: 18px;
+      background: url(../images/icon-apps.png);
+      background-size: contain; }
+    .menu li:nth-child(3)::before {
+      width: 22px;
+      height: 22px;
+      background: url(../images/icon-course.png);
+      background-size: contain; }
+    .menu li:nth-child(4)::before {
+      width: 21px;
+      height: 21px;
+      background: url(../images/icon-friend.png);
+      background-size: contain; }
+    .menu li:nth-child(5)::before {
+      width: 19px;
+      height: 20px;
+      background: url(../images/icon-setting.png);
+      background-size: contain; }
+    .menu li:after {
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+      -ms-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s;
+      content: '';
+      width: 160px;
+      height: 2px;
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      background-color: #89ABE3;
+      -webkit-transform: translateY(2px);
+      -moz-transform: translateY(2px);
+      transform: translateY(2px); }
+    .menu li a {
+      text-decoration: none;
+      color: #89ABE3; }
+    .menu li.is-selected, .menu li:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }
+      .menu li.is-selected:after, .menu li:hover:after {
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        transform: translateY(0px);
+        bottom: 0px; }
 
-h2 code {
-	text-transform: lowercase;
-}
+.contents {
+  background-color: #EFEEE9;
+  padding: 40px 0 120px 0; }
+  .contents h1 {
+    font-size: 3.0rem;
+    font-weight: 900;
+    line-height: 48px;
+    padding-bottom: 14px;
+    position: relative;
+    margin: 0; }
+    .contents h1:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100px;
+      height: 1px;
+      background-color: #89ABE3; }
 
+.activity-list {
+  margin-top: 40px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); }
+  .activity-list .item {
+    zoom: 1;
+    padding: 5px 15px;
+    line-height: 1; }
+    .activity-list .item:before, .activity-list .item:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .activity-list .item:after {
+      clear: both; }
+    .activity-list .item img, .activity-list .item p {
+      float: left; }
+    .activity-list .item p {
+      height: 60px;
+      line-height: 60px;
+      margin: 0 0 0 30px; }
+    .activity-list .item .activity-badge {
+      display: block;
+      width: 50px;
+      text-align: center;
+      float: right;
+      padding: 12px 0; }
+      .activity-list .item .activity-badge img {
+        float: none; }
+    .activity-list .item:nth-child(2n) {
+      background-color: #f6f6f4; }
 
-.glyphs {
-	background-color: #74f3c8;
-	color: #0e8a65;
-}
+.apps-list {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .apps-list .item {
+    position: relative;
+    width: 240px;
+    height: 300px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); }
+    .apps-list .item p {
+      margin: 0;
+      line-height: 1.5;
+      padding: 5px 20px;
+      font-size: 1.2rem; }
+    .apps-list .item .app-title {
+      position: absolute;
+      top: 180px;
+      width: 240px;
+      padding: 24px 10px 0 10px;
+      font-weight: 500;
+      height: 60px;
+      box-sizing: border-box;
+      color: #fff;
+      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+      font-size: 1.8rem; }
 
-.classes {
-	background-color: #33383e;
-	color: #fff;
-}
+.course .btn-add {
+  position: absolute;
+  right: 0px;
+  top: 30px; }
 
-.glyph {
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1em;
-	margin: 0 -0.21em 3em 0;
-	padding: 1.5em 0 0 1.5em;
-	text-align: center;
-	width: 50%;
-}
+.course-list {
+  float: left;
+  width: 720px;
+  margin-top: 40px; }
+  .course-list .item {
+    position: relative;
+    height: 120px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 12px 12px 12px 160px;
+    box-sizing: border-box; }
+    .course-list .item p {
+      margin: 6px 0 0 0;
+      line-height: 1.5;
+      font-size: 1.2rem; }
+    .course-list .item .course-title {
+      font-size: 1.8rem;
+      margin-top: 0;
+      font-weight: 500; }
+    .course-list .item .course-edit {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      text-decoration: none;
+      color: #89ABE3;
+      font-size: 1.2rem; }
+      .course-list .item .course-edit::before {
+        position: relative;
+        top: -2px;
+        content: '';
+        display: inline-block;
+        margin-right: 6px;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        background: url(../images/icon-edit.png);
+        background-size: cover; }
 
-.glyph-item {
-	border-radius: 8px;
-	display: inline-block;
-	width: 1.5em;
-	height: 1.5em;
-	line-height: 1;
-	padding: 0.25em;
-	position: relative;
-}
-.glyph:hover .glyph-item {
-	background-color: #0e8a65;
-	color: #fff;
-} 
+.course-thumb {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 130px;
+  height: 96px; }
 
-.mega {
-	font-size: 3em;
-}
+.course-thumb-1 {
+  background: url(../images/course_01.jpg) center center no-repeat;
+  background-size: cover; }
 
-a, 
-a:visited {
-	color: #74f3c8;
-	text-decoration: none;
-}
+.course-thumb-2 {
+  background: url(../images/course_02.jpg) center center no-repeat;
+  background-size: cover; }
 
-a:hover, 
-a:focus {
-		color: #0e8a65;
-}
+.course-thumb-3 {
+  background: url(../images/course_03.jpg) center center no-repeat;
+  background-size: cover; }
 
-.item-box {
-	display: inline-block;
-	font-family: consolas, monospace;
-	font-size: 1.2em;
-	margin: 0 -0.22em 1em 0;
-	padding-left: 1em;
-	width: 100%;
+.course-thumb-4 {
+  background: url(../images/course_04.jpg) center center no-repeat;
+  background-size: cover; }
 
-}
+.course-thumb-5 {
+  background: url(../images/course_05.jpg) center center no-repeat;
+  background-size: cover; }
 
-.item {
-	background-color: #fff;
-	color: #33383e;
-	border-radius: 8px;
-	display: inline-block;
-	padding: 0.5em;
-	width: 100%;
-}
-
-
-.colophon .group {
-	font-size: 1.5em;
-	text-transform: uppercase;
-}
-
-.group em {
-	font-weight: bold;
-	font-style: normal;
-}
-
-
-#wH {
-	width: 0;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-}
-
-
-
-@media only screen and (min-width: 768px) {
-	section:after,
-	.masthead:after {
-		bottom: -3em;
-		width: 6em;
-		height: 6em;
-	}
-
-	section header {
-		position: relative;
-	}
-
-	.masthead {
-		padding: 6em;
-	}
-
-	.colophon {
-		padding: 9em 6em;
-	}
-
-	.masthead h1 {
-		font-size: 4.5em;
-	}
-
-	.glyphs, 
-	.classes {
-		padding: 9em 6em;
-	}
-
-	.glyphs header,
-	.classes header {
-		margin-bottom: 4.5em;
-		padding-bottom: 4.5em;
-	}
-
-	.glyphs h1,
-	.classes h1 {
-		font-size: 4.5em;
-	}
-
-
-	.mega {
-		font-size: 6em;
-	}
-
-    
-.glyph {
-	width: 16.66666666666667%;
-}
-
-.item-box {
-	width: 33.333%;
-}
-    
-.colophon .group {
-  padding: 6em;
-}
-
-.project-name {
-	color: #01B49F;
-}
-
-.fixed-navigation nav>ul {
-  background-color: #1B2733;
-}
+.course-sidebar {
+  margin-top: 40px;
+  float: right;
+  width: 270px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  box-sizing: border-box; }
+  .course-sidebar h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    position: relative;
+    margin: 0 0 30px 0;
+    padding-bottom: 10px; }
+    .course-sidebar h2:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 60px;
+      height: 1px;
+      background-color: #89ABE3; }
+  .course-sidebar p {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0; }
+  .course-sidebar .course-thumb {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin: 20px 0 8px 0;
+    width: 240px;
+    height: 140px; }

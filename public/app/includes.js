@@ -1,7 +1,7 @@
 define([
 
 'layout/module',
-'student/module',
+'cfn/module',
 'layout/directives/smartInclude'
 ], function() {
   'use strict';

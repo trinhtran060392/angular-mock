@@ -1,0 +1,165 @@
+.mail-list {
+  box-sizing: border-box;
+  height: 800px;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  margin-top: 20px;
+  overflow: scroll; }
+  .mail-list a {
+    color: #2A2B2D; }
+
+.mail-header {
+  zoom: 1; }
+  .mail-header:before, .mail-header:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .mail-header:after {
+    clear: both; }
+  .mail-header .mail-forum {
+    float: left;
+    margin-right: 12px; }
+  .mail-header .mail-category {
+    float: left;
+    color: #9A9B9D;
+    line-height: 1.2; }
+  .mail-header .mail-date {
+    float: right;
+    line-height: 1.2;
+    color: #9A9B9D; }
+
+.mail-list-item {
+  display: block;
+  position: relative;
+  padding: 15px;
+  border-bottom: 1px solid #d8d8d8; }
+  .mail-list-item.is-selected::after, .mail-list-item:hover::after, .mail-list-item:focus::after, .mail-list-item:active::after {
+    top: 0;
+    bottom: 0; }
+  .mail-list-item::after {
+    content: "";
+    width: 3px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    background-color: #89ABE3;
+    z-index: 100;
+    top: 50%;
+    bottom: 50%;
+    -webkit-transition-property: top, bottom;
+    transition-property: top, bottom;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out; }
+  .mail-list-item p {
+    margin: 0;
+    line-height: 1.5; }
+  .mail-list-item .mail-sender {
+    margin: 15px 0 6px 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #9A9B9D;
+    text-overflow: ellipsis; }
+  .mail-list-item .mail-title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #9A9B9D;
+    text-overflow: ellipsis; }
+
+.mail-unread .mail-sender, .mail-unread .mail-title, .mail-unread .mail-category, .mail-unread .mail-date {
+  font-weight: bold;
+  color: #2A2B2D; }
+
+.mail-left {
+  width: 380px;
+  float: left; }
+  .mail-left .cfn-tab li {
+    width: 50%; }
+
+.mail-right {
+  width: 480px;
+  float: left; }
+
+.mail-category span {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px; }
+  .mail-category span::before {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4rem;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 1.6rem;
+    color: #9A9B9D; }
+  .mail-category span.mail-category-interview::before {
+    content: "sms"; }
+  .mail-category span.mail-category-resume::before {
+    content: "domain"; }
+  .mail-category span.mail-category-seminar::before {
+    content: "school"; }
+
+.mail-filter {
+  height: 44px;
+  zoom: 1; }
+  .mail-filter:before, .mail-filter:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .mail-filter:after {
+    clear: both; }
+
+.mail-content {
+  box-sizing: border-box;
+  height: 800px;
+  border: 1px solid #d8d8d8;
+  border-left: none;
+  background-color: #fff;
+  margin-top: 20px;
+  overflow: scroll;
+  padding: 15px; }
+  .mail-content p {
+    margin: 0;
+    line-height: 1.5; }
+  .mail-content .mail-sender {
+    margin: 15px 0 10px 0;
+    color: #2A2B2D;
+    font-weight: bold; }
+  .mail-content .mail-title {
+    color: #2A2B2D;
+    font-size: 1.2rem; }
+  .mail-content .mail-body {
+    margin-top: 15px;
+    border-top: 1px solid #d8d8d8;
+    padding-top: 15px; }
+    .mail-content .mail-body p {
+      word-break: break-all;
+      margin-bottom: 1em; }
+
+.md-select {
+  float: left;
+  width: 240px;
+  margin: 5px 0 0 20px; }
+
+.md-checkbox {
+  float: right;
+  width: 200px; }
+  .md-checkbox .md-checkbox-label {
+    font-size: 1.2rem; }

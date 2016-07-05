@@ -1,0 +1,330 @@
+@charset "UTF-8";
+/**
+ * Base Rules
+ */
+html {
+  min-height: 100%;
+  font-size: 62.5%;
+  position: relative; }
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #2A2B2D;
+  font-weight: 300;
+  background-color: #fff;
+  margin: 0 00 70px 0; }
+
+a {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  color: #3A50C9;
+  text-decoration: none; }
+  a:hover {
+    color: #89ABE3; }
+
+p, ul, li {
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2em;
+  text-align: justify; }
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #2A2B2D;
+  font-weight: 300;
+  margin: 60px 0 30px 0; }
+
+h2 {
+  font-size: 2.1rem;
+  font-weight: 300;
+  margin: 40px 0 20px 0; }
+
+h1 + h2 {
+  margin-top: 20px; }
+
+/**
+ * State Rules
+ */
+.top-wrapper {
+  zoom: 1;
+  width: 1180px;
+  margin: 0 auto;
+  padding: 0 0 60px 0;
+  position: relative; }
+  .top-wrapper:before, .top-wrapper:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .top-wrapper:after {
+    clear: both; }
+  .top-wrapper .sidemenu {
+    float: right;
+    top: 15px;
+    right: calc(50% - 590px); }
+
+.contents {
+  width: 880px;
+  float: left; }
+
+.company-mainvisual {
+  line-height: 0; }
+  .company-mainvisual img {
+    line-height: 0; }
+
+.cfn-contents-top {
+  width: 100%;
+  float: none; }
+
+.company-info {
+  margin-top: 20px;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border: 1px solid #d8d8d8;
+  padding: 20px;
+  height: 80px; }
+  .company-info .company-info-title {
+    margin-left: 20px;
+    margin-right: auto; }
+    .company-info .company-info-title h2 {
+      margin: 0; }
+    .company-info .company-info-title p {
+      margin: 0;
+      color: #9A9B9D;
+      font-size: 1.4rem; }
+  .company-info .company-info-button .button {
+    width: 140px;
+    height: 30px;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    overflow: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s; }
+    .company-info .company-info-button .button:hover, .company-info .company-info-button .button:focus, .company-info .company-info-button .button:active {
+      color: #fff; }
+      .company-info .company-info-button .button:hover::before, .company-info .company-info-button .button:focus::before, .company-info .company-info-button .button:active::before {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 1; }
+    .company-info .company-info-button .button::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -55px;
+      left: 0px;
+      border-radius: 100%;
+      background-color: #89ABE3;
+      width: 140px;
+      height: 140px;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.2; }
+    .company-info .company-info-button .button span::before {
+      content: "favorite_border";
+      top: 2px; }
+
+.company-contents h3 {
+  margin-top: 60px; }
+.company-contents h4 {
+  color: #9A9B9D;
+  font-size: 1.6rem;
+  margin-bottom: 10px; }
+.company-contents p {
+  font-size: 1.4rem; }
+.company-contents .company-contents-photo {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between; }
+
+.company-tab {
+  margin-top: 30px;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-content;
+  /* Safari */
+  justify-content: flex-content; }
+  .company-tab li {
+    min-width: 140px; }
+
+.company-data h3 {
+  margin-top: 60px; }
+.company-data dl {
+  margin-top: 40px;
+  zoom: 1;
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  background-color: #F5F9FA;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-justify-content: flex-content;
+  justify-content: flex-content;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  align-content: center; }
+  .company-data dl:before, .company-data dl:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .company-data dl:after {
+    clear: both; }
+  .company-data dl dt {
+    font-weight: bold;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 198px;
+    border-top: 1px solid #d8d8d8;
+    border-right: none; }
+  .company-data dl dd {
+    border-top: 1px solid #d8d8d8;
+    border-left: 1px solid #d8d8d8;
+    box-sizing: border-box;
+    width: 680px;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff; }
+    .company-data dl dd span {
+      display: inline-block;
+      min-width: 70px;
+      padding: 2px 6px;
+      text-align: center;
+      margin: 0 15px 10px 0;
+      border-bottom: 2px solid #89ABE3; }
+
+.cf-ad {
+  margin: 20px 0;
+  background-color: #9A9B9D;
+  height: 100px;
+  line-height: 100px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem; }
+
+.cf-info {
+  display: block;
+  border: 1px solid #d8d8d8;
+  margin-top: 20px; }
+  .cf-info .cf-info-title {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px 20px;
+    font-weight: bold; }
+    .cf-info .cf-info-title a:hover {
+      color: #89ABE3; }
+  .cf-info .cf-info-wrapper {
+    zoom: 1;
+    padding: 20px; }
+    .cf-info .cf-info-wrapper:before, .cf-info .cf-info-wrapper:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .cf-info .cf-info-wrapper:after {
+      clear: both; }
+  .cf-info .cf-info-image {
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 200px; }
+  .cf-info .cf-info-image {
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 200px; }
+  .cf-info .cf-info-information {
+    float: right;
+    width: 500px; }
+    .cf-info .cf-info-information dt {
+      width: 8em; }
+    .cf-info .cf-info-information dd {
+      width: calc(100% - 8.5em); }
+  .cf-info .cf-icon-register {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: #fff;
+    text-align: right;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.5; }
+    .cf-info .cf-icon-register span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      padding: 8px 4px; }
+    .cf-info .cf-icon-register::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      z-index: 0;
+      border-bottom: 80px solid #3A50C9;
+      border-left: 80px solid transparent; }
+  .cf-info .cf-icon-register-soon::before {
+    border-bottom: 80px solid #89ABE3;
+    border-left: 80px solid transparent; }
+  .cf-info .cf-icon-register-closed::before {
+    border-bottom: 80px solid #6A6B6D;
+    border-left: 80px solid transparent; }
+
+.cf-info-boston .cf-info-title a {
+  color: #013C6A; }
+
+.cf-info-london .cf-info-title a {
+  color: #DE626A; }
+
+.cf-info-tokyo-summer .cf-info-title a {
+  color: #66AD78; }
+
+.cf-flow {
+  margin: 20px 0;
+  background-color: #9A9B9D;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem; }
+
+.cf-cms-step, .cf-cms-course {
+  margin: 20px 0;
+  background-color: #9A9B9D;
+  height: 240px;
+  line-height: 240px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem; }
+
+.sidemenu .cf-ad {
+  margin: 0 0 20px 0;
+  height: 140px;
+  line-height: 140px; }

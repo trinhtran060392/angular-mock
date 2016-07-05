@@ -1,0 +1,80 @@
+<div>
+  <link rel="stylesheet" href="./styles/css/register.css">
+  <link rel="stylesheet" href="./styles/css/top_contents.css">
+  <div class="top-contents">
+      <div class="top-wrapper">
+        <div class="register-top" ng-if="currentStep === 1">
+          <div class="register-top-box register-top-box-left">
+            <h2>会員登録がまだの方</h2>
+            <p>以下、入力フォームから必須事項をご記入ください。<br>プロフィール、学歴、職務経歴、アカウント情報の登録が完了しますと会員登録と同時に求人エントリー、キャリアフォーラムへの参加予約が完了します。</p>
+            <p class="note"><span>オレンジ色</span>の項目は必須項目です。</p>
+            <a href="#" class="button button-facebook">Facebookで会員登録</a>
+          </div>
+          <div class="register-top-box register-top-box-right">
+            <h2>登録済みの方</h2>
+
+            <form action="">
+              <div class="md-textfield">
+                <input type="text" class="md-textfield-input">
+                <label class="md-textfield-label">メールアドレス</label>
+              </div>
+              <div class="md-textfield">
+                <input type="password" class="md-textfield-input">
+                <label class="md-textfield-label">パスワード</label>
+              </div>
+              <div class="md-checkbox">
+                <input class="md-checkbox-input" type="checkbox" id="registerlogin-auto">
+                <label class="md-checkbox-label" for="registerlogin-auto">次回から自動ログイン</label>
+              </div>
+              <p class="register-top-box-forgot"><a href="pw_remind.html">パスワードをお忘れの方</a></p>
+              <a href="#" class="button">ログイン</a>
+              <a href="#" class="button button-facebook">Facebookでログイン</a>
+            </form>
+          </div>
+        </div>
+
+        <div class="register-contents">
+          <div class="register-flow">
+            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 1, 'is-complete':currentStep > 1}">
+              <span>STEP 1</span>
+              <p>会員情報入力</p>
+              <p class="register-flow-complete">会員登録完了！</p>
+            </div>
+            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 2, 'is-complete':currentStep > 2}">
+              <span>STEP 2</span>
+              <p>学歴情報入力</p>
+              <p class="register-flow-complete">入力OK！</p>
+            </div>
+            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 3, 'is-complete':currentStep > 3}">
+              <span>STEP 3</span>
+              <p>プロフィール入力</p>
+              <p class="register-flow-complete">入力OK！</p>
+            </div>
+            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 4, 'is-complete':currentStep > 4}">
+              <span>STEP 4</span>
+              <p>職務経歴入力</p>
+              <p class="register-flow-complete">入力OK！</p>
+            </div>
+            <div class="register-flow-step" ng-class="{'is-complete':currentStep === 5}">
+              <span>STEP 5</span>
+              <p>レジュメ完成</p>
+              <p class="register-flow-complete">入力OK！</p>
+            </div>
+          </div>
+            <div data-smart-include="app/cfn/views/templates/form_01.tpl.html" class="placeholder-form1"></div>
+            <div data-smart-include="app/cfn/views/templates/form_02.tpl.html" class="placeholder-form2"></div>
+            <div data-smart-include="app/cfn/views/templates/form_03.tpl.html" class="placeholder-form3"></div>
+            <div data-smart-include="app/cfn/views/templates/form_04.tpl.html" class="placeholder-form4"></div>
+            <div data-smart-include="app/cfn/views/templates/form_05.tpl.html" class="placeholder-form5"></div>
+        </div>
+
+      </div>
+    </div>
+
+  <div class="cf-overlay"></div>
+  <div class="cf-popup cf-popup-01">
+  </div>
+
+  <script src="./styles/js/form.js"></script>
+  <script src="./styles/js/register_demo.js"></script>
+</div>

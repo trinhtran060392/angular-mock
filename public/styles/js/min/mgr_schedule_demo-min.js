@@ -1,0 +1,1 @@
+$(function(){$(".button-add").click(function(){var n=$(".line-new:last-child");return n.show(),!1})});

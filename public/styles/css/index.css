@@ -1,0 +1,482 @@
+@charset "UTF-8";
+/**
+ * Base Rules
+ */
+html {
+  min-height: 100%;
+  font-size: 62.5%;
+  position: relative; }
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #2A2B2D;
+  font-weight: 300;
+  background-color: #fff;
+  margin: 0 00 70px 0; }
+
+a {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  color: #3A50C9;
+  text-decoration: none; }
+  a:hover {
+    color: #89ABE3; }
+
+p, ul, li {
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2em;
+  text-align: justify; }
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #2A2B2D;
+  font-weight: 300;
+  margin: 60px 0 30px 0; }
+
+h2 {
+  font-size: 2.1rem;
+  font-weight: 300;
+  margin: 40px 0 20px 0; }
+
+h1 + h2 {
+  margin-top: 20px; }
+
+/**
+ * State Rules
+ */
+.header-cfn {
+  border-bottom: none; }
+
+.top-wrapper {
+  zoom: 1;
+  width: 1180px;
+  margin: 0 auto; }
+  .top-wrapper:before, .top-wrapper:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .top-wrapper:after {
+    clear: both; }
+
+.top-wrapper-left {
+  float: left; }
+
+.top-wrapper-right {
+  float: right; }
+
+.top-main {
+  width: 100%;
+  min-width: 980px;
+  height: 480px;
+  background: url(../images/main-visual.jpg) center center no-repeat;
+  background-size: cover; }
+  .top-main .top-wrapper {
+    width: 980px; }
+  .top-main h2 {
+    color: #fff;
+    font-size: 3.2rem;
+    margin-bottom: 60px; }
+  .top-main .button {
+    width: 280px;
+    height: 42px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 100;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    overflow: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s; }
+    .top-main .button:hover, .top-main .button:focus, .top-main .button:active {
+      color: #fff; }
+      .top-main .button:hover::before, .top-main .button:focus::before, .top-main .button:active::before {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 1; }
+    .top-main .button::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -116px;
+      left: 0px;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      width: 280px;
+      height: 280px;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.2; }
+  .top-main .top-wrapper {
+    padding: 90px 0 0 0; }
+
+.top-logo {
+  min-width: 980px;
+  padding: 60px 0; }
+
+.top-logo-container {
+  max-width: 980px;
+  margin: 0 auto;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .top-logo-container li {
+    width: 12.5%;
+    height: 72px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    border-left: none;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .top-logo-container li:nth-last-child(1), .top-logo-container li:nth-last-child(2), .top-logo-container li:nth-last-child(3), .top-logo-container li:nth-last-child(4), .top-logo-container li:nth-last-child(5), .top-logo-container li:nth-last-child(6), .top-logo-container li:nth-last-child(7), .top-logo-container li:nth-last-child(8) {
+      border-bottom: none; }
+    .top-logo-container li:nth-child(8n) {
+      border-right: none; }
+
+.top-venue {
+  min-width: 1180px;
+  padding: 60px 0;
+  background: url(../images/bg-top-venue.jpg) center center no-repeat;
+  background-size: cover; }
+  .top-venue .top-wrapper {
+    position: relative; }
+
+.top-venue-map {
+  position: relative;
+  max-width: 1180px;
+  height: 540px;
+  margin: 0 auto;
+  background: url(../images/top-map.png) no-repeat; }
+  .top-venue-map li {
+    position: absolute;
+    list-style: none; }
+    .top-venue-map li a {
+      position: absolute;
+      display: block;
+      text-decoration: none; }
+      .top-venue-map li a::before {
+        position: absolute;
+        display: block;
+        content: "";
+        top: -14px;
+        left: -14px;
+        width: 12px;
+        height: 12px;
+        background: #DD0E1B;
+        border-radius: 12px; }
+      .top-venue-map li a::after {
+        position: absolute;
+        display: block;
+        content: "";
+        top: -18px;
+        left: -18px;
+        width: 20px;
+        height: 20px;
+        background: #DD0E1B;
+        border-radius: 20px;
+        opacity: 0.3;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s; }
+      .top-venue-map li a:hover::after, .top-venue-map li a:focus::after, .top-venue-map li a:active::after {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0; }
+    .top-venue-map li span {
+      position: relative;
+      display: block;
+      color: #DD0E1B;
+      border: 1px solid #DD0E1B;
+      font-size: 1.1rem;
+      padding: 1px 0px;
+      width: 60px;
+      text-align: center;
+      position: relative;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow: hidden;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s; }
+      .top-venue-map li span:hover, .top-venue-map li span:focus, .top-venue-map li span:active {
+        color: #fff; }
+        .top-venue-map li span:hover::before, .top-venue-map li span:focus::before, .top-venue-map li span:active::before {
+          -webkit-transform: scale(2);
+          transform: scale(2);
+          opacity: 1; }
+      .top-venue-map li span::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: -20px;
+        left: 0px;
+        border-radius: 100%;
+        background-color: #DD0E1B;
+        width: 60px;
+        height: 60px;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        opacity: 0.2; }
+  .top-venue-map .tokyo {
+    top: 212px;
+    left: 978px; }
+  .top-venue-map .osaka {
+    top: 252px;
+    left: 872px; }
+  .top-venue-map .sydney {
+    top: 440px;
+    left: 1000px; }
+  .top-venue-map .london {
+    top: 154px;
+    left: 571px; }
+  .top-venue-map .boston {
+    top: 222px;
+    left: 389px; }
+  .top-venue-map .losangels {
+    top: 238px;
+    left: 235px; }
+    .top-venue-map .losangels span {
+      width: 84px;
+      position: relative;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow: hidden;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s; }
+      .top-venue-map .losangels span:hover, .top-venue-map .losangels span:focus, .top-venue-map .losangels span:active {
+        color: #fff; }
+        .top-venue-map .losangels span:hover::before, .top-venue-map .losangels span:focus::before, .top-venue-map .losangels span:active::before {
+          -webkit-transform: scale(2);
+          transform: scale(2);
+          opacity: 1; }
+      .top-venue-map .losangels span::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: -32px;
+        left: 0px;
+        border-radius: 100%;
+        background-color: #DD0E1B;
+        width: 84px;
+        height: 84px;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        opacity: 0.2; }
+  .top-venue-map .sanfrancisco {
+    top: 181px;
+    left: 97px; }
+    .top-venue-map .sanfrancisco span {
+      width: 108px;
+      position: relative;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow: hidden;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s; }
+      .top-venue-map .sanfrancisco span:hover, .top-venue-map .sanfrancisco span:focus, .top-venue-map .sanfrancisco span:active {
+        color: #fff; }
+        .top-venue-map .sanfrancisco span:hover::before, .top-venue-map .sanfrancisco span:focus::before, .top-venue-map .sanfrancisco span:active::before {
+          -webkit-transform: scale(2);
+          transform: scale(2);
+          opacity: 1; }
+      .top-venue-map .sanfrancisco span::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: -44px;
+        left: 0px;
+        border-radius: 100%;
+        background-color: #DD0E1B;
+        width: 108px;
+        height: 108px;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        opacity: 0.2; }
+
+.top-venue-info {
+  position: abosolute;
+  z-index: 1;
+  overflow: scroll;
+  width: 360px;
+  height: 360px;
+  padding: 0 40px 0 20px;
+  background-color: #fff;
+  position: absolute;
+  top: 130px;
+  left: 480px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
+  .top-venue-info dt {
+    width: 8em; }
+  .top-venue-info dd {
+    width: calc(100% - 8em);
+    word-break: break-all; }
+  .top-venue-info .top-venue-info-title {
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 8px 0;
+    margin: 40px 0 20px 0; }
+    .top-venue-info .top-venue-info-title:first-child {
+      margin-top: 20px; }
+    .top-venue-info .top-venue-info-title a {
+      color: #6A6B6D; }
+      .top-venue-info .top-venue-info-title a:hover {
+        color: #89ABE3; }
+
+.top-about {
+  min-width: 980px;
+  padding: 60px 0;
+  background-color: #F5F9FA; }
+  .top-about .top-wrapper {
+    width: 980px; }
+  .top-about .top-wrapper-left {
+    width: 580px; }
+    .top-about .top-wrapper-left p {
+      font-size: 1.4rem; }
+  .top-about .top-wrapper-right {
+    width: 280px; }
+    .top-about .top-wrapper-right p {
+      text-align: center; }
+  .top-about .button {
+    width: 280px;
+    height: 42px;
+    border: 1px solid #3A50C9;
+    color: #3A50C9;
+    font-size: 1.4rem;
+    font-weight: 100;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    overflow: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s; }
+    .top-about .button:hover, .top-about .button:focus, .top-about .button:active {
+      color: #fff; }
+      .top-about .button:hover::before, .top-about .button:focus::before, .top-about .button:active::before {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 1; }
+    .top-about .button::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -116px;
+      left: 0px;
+      border-radius: 100%;
+      background-color: #3A50C9;
+      width: 280px;
+      height: 280px;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.2; }
+
+.top-app {
+  min-width: 980px;
+  padding: 60px 0 0 0; }
+  .top-app .top-wrapper {
+    width: 980px; }
+  .top-app .top-wrapper-left {
+    width: 280px; }
+    .top-app .top-wrapper-left p {
+      text-align: center;
+      margin: 0;
+      line-height: 0; }
+  .top-app .top-wrapper-right {
+    width: 580px; }
+    .top-app .top-wrapper-right p {
+      font-size: 1.4rem; }
+  .top-app .top-app-download {
+    zoom: 1; }
+    .top-app .top-app-download:before, .top-app .top-app-download:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .top-app .top-app-download:after {
+      clear: both; }
+    .top-app .top-app-download p {
+      float: left;
+      margin-right: 20px; }

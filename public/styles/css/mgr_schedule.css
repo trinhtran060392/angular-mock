@@ -1,0 +1,386 @@
+/**
+ * State Rules
+ */
+.schedule-select {
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  padding: 20px 40px 10px 40px;
+  margin: 30px 0;
+  zoom: 1; }
+  .schedule-select:before, .schedule-select:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .schedule-select:after {
+    clear: both; }
+  .schedule-select .md-select {
+    margin-top: 19px;
+    float: left; }
+  .schedule-select .md-textfield {
+    float: left;
+    width: 280px;
+    margin-left: 30px; }
+  .schedule-select .button {
+    float: left;
+    margin-top: 20px;
+    width: 120px;
+    height: 24px;
+    font-size: 1.0rem;
+    margin-left: 30px;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    overflow: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s; }
+    .schedule-select .button:hover, .schedule-select .button:focus, .schedule-select .button:active {
+      color: #fff; }
+      .schedule-select .button:hover::before, .schedule-select .button:focus::before, .schedule-select .button:active::before {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 1; }
+    .schedule-select .button::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -50px;
+      left: 0px;
+      border-radius: 100%;
+      background-color: #89ABE3;
+      width: 120px;
+      height: 120px;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.2; }
+  .schedule-select ul {
+    zoom: 1; }
+    .schedule-select ul:before, .schedule-select ul:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .schedule-select ul:after {
+      clear: both; }
+    .schedule-select ul li {
+      float: left;
+      margin-right: 40px; }
+
+.schedule-controller {
+  zoom: 1;
+  margin: 30px 0 10px 0; }
+  .schedule-controller:before, .schedule-controller:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .schedule-controller:after {
+    clear: both; }
+  .schedule-controller .schedule-date {
+    zoom: 1;
+    float: left; }
+    .schedule-controller .schedule-date:before, .schedule-controller .schedule-date:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .schedule-controller .schedule-date:after {
+      clear: both; }
+    .schedule-controller .schedule-date div {
+      float: left;
+      padding-top: 3px; }
+    .schedule-controller .schedule-date .schedule-date-title {
+      padding: 0;
+      font-size: 1.8rem;
+      margin: 0 20px; }
+  .schedule-controller .schedule-button {
+    zoom: 1;
+    float: left;
+    margin-left: 40px; }
+    .schedule-controller .schedule-button:before, .schedule-controller .schedule-button:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .schedule-controller .schedule-button:after {
+      clear: both; }
+    .schedule-controller .schedule-button .button {
+      float: left;
+      font-size: 1.0rem;
+      width: 100px;
+      height: 24px;
+      margin-left: 10px;
+      position: relative;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow: hidden;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s; }
+      .schedule-controller .schedule-button .button:hover, .schedule-controller .schedule-button .button:focus, .schedule-controller .schedule-button .button:active {
+        color: #fff; }
+        .schedule-controller .schedule-button .button:hover::before, .schedule-controller .schedule-button .button:focus::before, .schedule-controller .schedule-button .button:active::before {
+          -webkit-transform: scale(2);
+          transform: scale(2);
+          opacity: 1; }
+      .schedule-controller .schedule-button .button::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: -48px;
+        left: 0px;
+        border-radius: 100%;
+        background-color: #89ABE3;
+        width: 120px;
+        height: 120px;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        opacity: 0.2; }
+      .schedule-controller .schedule-button .button.button-add span::before {
+        content: "add";
+        top: 0px;
+        font-size: 1.4rem; }
+      .schedule-controller .schedule-button .button.button-download span::before {
+        content: "vertical_align_bottom";
+        top: 0px;
+        font-size: 1.4rem; }
+
+.mgr-schedule {
+  zoom: 1;
+  width: 100%;
+  padding-bottom: 10px;
+  overflow-x: scroll; }
+  .mgr-schedule:before, .mgr-schedule:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .mgr-schedule:after {
+    clear: both; }
+  .mgr-schedule .mgr-schedule-inner {
+    zoom: 1; }
+    .mgr-schedule .mgr-schedule-inner:before, .mgr-schedule .mgr-schedule-inner:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .mgr-schedule .mgr-schedule-inner:after {
+      clear: both; }
+  .mgr-schedule div {
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    text-align: center; }
+  .mgr-schedule .line-head {
+    height: 100px; }
+    .mgr-schedule .line-head .line-head-title {
+      height: 40px;
+      line-height: 40px;
+      font-weight: bold; }
+      .mgr-schedule .line-head .line-head-title i {
+        position: relative;
+        font-size: 1.4rem;
+        top: 2px;
+        margin-left: 6px; }
+    .mgr-schedule .line-head .line-head-name {
+      height: 30px;
+      line-height: 30px;
+      border-top: 1px solid #d8d8d8;
+      font-size: 1.0rem; }
+    .mgr-schedule .line-head .line-head-memo {
+      height: 30px;
+      line-height: 30px;
+      border-top: 1px solid #d8d8d8;
+      font-size: 1.0rem; }
+  .mgr-schedule .line-axis {
+    float: left;
+    background-color: #fff;
+    width: 80px;
+    border: 1px solid #d8d8d8; }
+    .mgr-schedule .line-axis .line-head {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      width: 80px; }
+      .mgr-schedule .line-axis .line-head .md-checkbox {
+        width: 18px;
+        margin: 0 auto; }
+  .mgr-schedule .line-time {
+    position: relative;
+    height: 50px;
+    border-top: 1px solid #d8d8d8;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.2rem; }
+    .mgr-schedule .line-time .line-time-half {
+      position: relative;
+      height: 25px; }
+      .mgr-schedule .line-time .line-time-half:first-child {
+        border-bottom: 1px dashed #d8d8d8; }
+    .mgr-schedule .line-time .line-reserve {
+      position: absolute;
+      z-index: 1;
+      width: 214px;
+      height: 44px;
+      top: 3px;
+      left: 3px; }
+      .mgr-schedule .line-time .line-reserve a {
+        display: block;
+        width: 213px;
+        height: 43px;
+        line-height: 42px;
+        border-radius: 3px;
+        background-color: #89ABE3;
+        color: #fff; }
+        .mgr-schedule .line-time .line-reserve a:hover {
+          background-color: #3A50C9; }
+  .mgr-schedule .line {
+    float: left;
+    background-color: #fff;
+    width: 220px;
+    border: 1px solid #d8d8d8;
+    border-left: none; }
+  .mgr-schedule .line-new {
+    display: none; }
+
+.cf-popup-interview-01 .md-textfield {
+  width: 400px; }
+
+.cf-popup-interview-apply p {
+  margin: 20px 0;
+  font-size: 1.4rem; }
+  .cf-popup-interview-apply p span {
+    color: #DD0E1B;
+    font-size: 1.2rem; }
+.cf-popup-interview-apply div {
+  border: 1px solid #d8d8d8;
+  padding: 10px;
+  font-size: 1.2rem;
+  height: 80px;
+  overflow: scroll; }
+
+.mgr-message {
+  zoom: 1; }
+  .mgr-message:before, .mgr-message:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .mgr-message:after {
+    clear: both; }
+
+.mgr-message-box {
+  float: left;
+  border: 1px solid #d8d8d8;
+  padding: 10px 40px;
+  background-color: #fff;
+  width: 70%;
+  box-sizing: border-box; }
+  .mgr-message-box .mgr-message-wrapper {
+    padding: 20px 0;
+    border-top: 1px solid #d8d8d8;
+    zoom: 1; }
+    .mgr-message-box .mgr-message-wrapper:before, .mgr-message-box .mgr-message-wrapper:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .mgr-message-box .mgr-message-wrapper:after {
+      clear: both; }
+    .mgr-message-box .mgr-message-wrapper:first-of-type {
+      border: none; }
+  .mgr-message-box .mgr-message-title {
+    float: left;
+    width: 20%; }
+  .mgr-message-box .mgr-message-input {
+    zoom: 1;
+    float: left;
+    width: 80%; }
+    .mgr-message-box .mgr-message-input:before, .mgr-message-box .mgr-message-input:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020"; }
+    .mgr-message-box .mgr-message-input:after {
+      clear: both; }
+  .mgr-message-box .md-textfield {
+    margin: 0;
+    width: 100%; }
+  .mgr-message-box .md-textarea {
+    margin: 0; }
+  .mgr-message-box ul {
+    margin-left: 20px; }
+
+.mgr-message-template {
+  float: right;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  width: 25%;
+  height: 380px;
+  overflow-y: scroll; }
+  .mgr-message-template p {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    margin: 0; }
+  .mgr-message-template .mail-template-box {
+    border-top: 1px solid #d8d8d8;
+    padding: 20px;
+    font-size: 1.2rem; }
+    .mgr-message-template .mail-template-box div {
+      margin-bottom: 10px; }
+  .mgr-message-template .button {
+    margin: 20px auto 0 auto;
+    width: 80px;
+    height: 24px;
+    font-size: 1.2rem; }
+
+.mgr-message-template-save {
+  zoom: 1;
+  margin: 30px 0; }
+  .mgr-message-template-save:before, .mgr-message-template-save:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020"; }
+  .mgr-message-template-save:after {
+    clear: both; }
+  .mgr-message-template-save .md-checkbox {
+    margin-top: 20px;
+    margin-right: 20px;
+    float: left; }
+  .mgr-message-template-save .md-textfield {
+    float: left;
+    width: 300px; }
+
+.mgr-message-button {
+  margin: 30px 0;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-justify-content: left;
+  justify-content: left; }
+  .mgr-message-button .button {
+    margin: 0 10px 0 0; }

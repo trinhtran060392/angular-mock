@@ -1,0 +1,1 @@
+$(function(){$(function(){var n=$(".popup-login"),o=$(".popup-login-button").find(".button");o.click(function(){return!1})})});

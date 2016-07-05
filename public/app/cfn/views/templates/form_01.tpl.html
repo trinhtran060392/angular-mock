@@ -1,0 +1,133 @@
+<div ng-show="currentStep === 1">
+
+<h2>基本情報入力</h2>
+<form action="">
+  <div class="register-row">
+    <div class="md-textfield required validate">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">氏名</label>
+    </div>
+    <div class="md-textfield required validate">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">氏名（ローマ字）</label>
+    </div>
+  </div>
+  <div class="register-row">
+    <div class="md-textfield required validate">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">生年月日</label>
+    </div>
+    <div class="md-radio required validate">
+      <input class="md-radio-input" type="radio" name="gender" id="gender-1" checked>
+      <label class="md-radio-label" for="gender-1">男</label>
+      <input class="md-radio-input" type="radio" name="gender" id="gender-2">
+      <label class="md-radio-label" for="gender-2">女</label>
+      <input class="md-radio-input" type="radio" name="gender" id="gender-3">
+      <label class="md-radio-label" for="gender-3">その他</label>
+    </div>
+  </div>
+  <div class="register-row">
+    <div class="md-textfield required validate">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">メールアドレス</label>
+    </div>
+    <div class="md-select required validate">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">希望メール言語</option>
+        <option value="1">日本語</option>
+        <option value="2">英語</option>
+      </select>
+    </div>
+  </div>
+  <div class="register-row">
+    <div class="md-textfield required validate">
+      <input type="password" class="md-textfield-input">
+      <label class="md-textfield-label">パスワード</label>
+    </div>
+    <div class="md-textfield required validate">
+      <input type="password" class="md-textfield-input">
+      <label class="md-textfield-label">パスワード（確認用）</label>
+    </div>
+  </div>
+  <div class="register-row register-add additional-target" ng-repeat="lang in languages track by $index">
+    <div class="md-select required validate">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">言語選択</option>
+        <option value="{{type.value}}" ng-repeat="type in lang.types">{{type.name}}</option>
+      </select>
+    </div>
+    <div class="md-select required validate">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">言語スキル選択</option>
+        <option ng-repeat="level in lang.levels" value="{{leven.value}}">{{level.name}}</option>
+      </select>
+    </div>
+    <a href ng-if="$index >= 1" class="button button-outline button-delete"><span>削除</span></a>
+    <a href ng-if="$last" ng-click="addLanguage()" class="button button-outline button-add add-item"><span>他の言語を追加</span></a>
+  </div>
+  <div class="register-row register-add additional-target" ng-repeat="skill in skills track by $index">
+    <div class="md-select">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">スキル区分</option>
+        <option value="{{type.value}}" ng-repeat="type in skill.types">{{type.name}}</option>
+      </select>
+    </div>
+    <div class="md-textfield">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">スキル名</label>
+    </div>
+    <a href ng-if="$index >= 1" class="button button-outline button-delete"><span>削除</span></a>
+    <a href ng-if="$last" ng-click="addSkill()" class="button button-outline button-add add-item"><span>他のスキルを追加</span></a>
+  </div>
+  <div class="register-row">
+    <div class="md-textarea">
+      <textarea name="" class="md-textarea-input"></textarea>
+      <label class="md-textarea-label">自己PR</label>
+    </div>
+  </div>
+  <div class="register-row register-add additional-target" ng-repeat="job in jobs track by $index">
+    <div class="md-select required validate" style="margin-right: 0;">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">希望職種カテゴリ</option>
+        <option ng-repeat="type in job.stypes" value="{{type.value}}">{{type.name}}</option>
+      </select>
+    </div>
+    <a ng-if="$index >= 1"  href class="button button-outline button-delete"><span>削除</span></a>
+    <a ng-if="$last" href ng-click="addJob()" class="button button-outline button-add add-item"><span>他の希望職種を追加</span></a>
+  </div>
+  <div class="register-row">
+    <div class="md-textfield validate">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">TOEIC</label>
+    </div>
+    <div class="md-textfield validate">
+      <input type="text" class="md-textfield-input">
+      <label class="md-textfield-label">VERSANT</label>
+    </div>
+  </div>
+  <div class="register-row register-add additional-target" ng-repeat="area in areas track by $index">
+    <div class="md-select required validate">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">希望勤務地エリア</option>
+        <option ng-repeat="location in area.locations" value="{{location.value}}">{{location.name}}</option>
+      </select>
+    </div>
+    <div class="md-select required validate">
+      <select name="" id="" class="md-select-box">
+        <option value="" disabled selected style="display:none;">希望勤務地詳細</option>
+        <option ng-repeat="detail in area.details" value="{{detail.value}}">{{detail.name}}</option>
+      </select>
+    </div>
+    <a href ng-if="$index >= 1" class="button button-outline button-delete"><span>削除</span></a>
+    <a href ng-if="$last" ng-click="addArea()" class="button button-outline button-add add-item"><span>他の希望職務地を追加</span></a>
+  </div>
+
+  <div class="register-row register-privacy">
+    <div class="md-checkbox">
+      <input class="md-checkbox-input" type="checkbox" id="register-privacy">
+      <label class="md-checkbox-label" for="register-privacy">利用規約・プライバシーポリシーに同意する</label>
+    </div>
+  </div>
+  <div class="register-next"><a href="" class="button cf-popup-open" ng-click="openPopUp()">入力内容を確認する</a></div>
+</form>
+</div>

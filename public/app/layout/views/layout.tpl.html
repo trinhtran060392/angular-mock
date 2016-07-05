@@ -1,25 +1,14 @@
-<!-- HEADER -->
-<div data-smart-include="app/layout/partials/header.tpl.html" class="placeholder-header">
-</div>
-<!-- END HEADER -->
 
-<!-- Left panel -->
-<div data-smart-include="app/layout/partials/navigation.tpl.html" class="placeholder-left-panel"></div>
+<!-- common header -->
+  <header class="header-cfn">
+    <div data-smart-include="app/layout/include/_header.html" class="placeholder-header">
+  </header>
+<!--/common header -->
 
-<!-- MAIN PANEL -->
-<div id="main" role="main">
+<div data-ui-view="content"></div>
 
-  <!-- <demo-states></demo-states> -->
-
-  <!-- RIBBON -->
-  <div id="ribbon">
-    <!-- breadcrumbs -->
-    <state-breadcrumbs></state-breadcrumbs>
-  </div>
-  <!-- End RIBBON -->
-
-  <div data-wrap-for="#content">
-    <div data-ui-view="content" data-autoscroll="false"></div>
-  </div>
-
-</div>
+<!-- common footer -->
+  <footer>
+    <div data-smart-include="app/layout/include/_footer.html" class="placeholder-footer">
+  </footer>
+<!--/common footer -->
