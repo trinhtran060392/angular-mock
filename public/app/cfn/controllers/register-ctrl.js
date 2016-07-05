@@ -121,9 +121,8 @@ define(['cfn/module'], function (module) {
     }
 
     function loadModal() {
-      $templateRequest('app/cfn/views//templates/popup.tpl.html').then(function(template) {
+      $templateRequest('app/cfn/views/templates/popup.tpl.html').then(function(template) {
 
-        console.log(template);
         $target.html($compile(template)($scope));
         var targetPos = $(document).scrollTop() + ($(window).height() - $target.height()) / 2;
         $target.css({

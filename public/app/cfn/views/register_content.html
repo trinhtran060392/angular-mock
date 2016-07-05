@@ -2,75 +2,641 @@
   <link rel="stylesheet" href="./styles/css/register.css">
   <link rel="stylesheet" href="./styles/css/top_contents.css">
   <div class="top-contents">
-      <div class="top-wrapper">
-        <div class="register-top" ng-if="currentStep === 1">
-          <div class="register-top-box register-top-box-left">
-            <h2>会員登録がまだの方</h2>
-            <p>以下、入力フォームから必須事項をご記入ください。<br>プロフィール、学歴、職務経歴、アカウント情報の登録が完了しますと会員登録と同時に求人エントリー、キャリアフォーラムへの参加予約が完了します。</p>
-            <p class="note"><span>オレンジ色</span>の項目は必須項目です。</p>
-            <a href="#" class="button button-facebook">Facebookで会員登録</a>
-          </div>
-          <div class="register-top-box register-top-box-right">
-            <h2>登録済みの方</h2>
+    <div class="top-wrapper">
+      <div class="register-top" ng-if="currentStep === 1">
+        <div class="register-top-box register-top-box-left">
+          <h2>会員登録がまだの方</h2>
+          <p>以下、入力フォームから必須事項をご記入ください。<br>プロフィール、学歴、職務経歴、アカウント情報の登録が完了しますと会員登録と同時に求人エントリー、キャリアフォーラムへの参加予約が完了します。</p>
+          <p class="note"><span>オレンジ色</span>の項目は必須項目です。</p>
+          <a href="#" class="button button-facebook">Facebookで会員登録</a>
+        </div>
+        <div class="register-top-box register-top-box-right">
+          <h2>登録済みの方</h2>
 
+          <form action="">
+            <div class="md-textfield">
+              <input type="text" class="md-textfield-input">
+              <label class="md-textfield-label">メールアドレス</label>
+            </div>
+            <div class="md-textfield">
+              <input type="password" class="md-textfield-input">
+              <label class="md-textfield-label">パスワード</label>
+            </div>
+            <div class="md-checkbox">
+              <input class="md-checkbox-input" type="checkbox" id="registerlogin-auto">
+              <label class="md-checkbox-label" for="registerlogin-auto">次回から自動ログイン</label>
+            </div>
+            <p class="register-top-box-forgot"><a href="pw_remind.html">パスワードをお忘れの方</a></p>
+            <a href="#" class="button">ログイン</a>
+            <a href="#" class="button button-facebook">Facebookでログイン</a>
+          </form>
+        </div>
+      </div>
+
+      <div class="register-contents">
+        <div class="register-flow">
+          <div class="register-flow-step" ng-class="{'is-active' : currentStep === 1, 'is-complete':currentStep > 1}">
+            <span>STEP 1</span>
+            <p>会員情報入力</p>
+            <p class="register-flow-complete">会員登録完了！</p>
+          </div>
+          <div class="register-flow-step" ng-class="{'is-active' : currentStep === 2, 'is-complete':currentStep > 2}">
+            <span>STEP 2</span>
+            <p>学歴情報入力</p>
+            <p class="register-flow-complete">入力OK！</p>
+          </div>
+          <div class="register-flow-step" ng-class="{'is-active' : currentStep === 3, 'is-complete':currentStep > 3}">
+            <span>STEP 3</span>
+            <p>プロフィール入力</p>
+            <p class="register-flow-complete">入力OK！</p>
+          </div>
+          <div class="register-flow-step" ng-class="{'is-active' : currentStep === 4, 'is-complete':currentStep > 4}">
+            <span>STEP 4</span>
+            <p>職務経歴入力</p>
+            <p class="register-flow-complete">入力OK！</p>
+          </div>
+          <div class="register-flow-step" ng-class="{'is-complete':currentStep === 5}">
+            <span>STEP 5</span>
+            <p>レジュメ完成</p>
+            <p class="register-flow-complete">入力OK！</p>
+          </div>
+        </div>
+           
+        <div class="form-content">
+          <!-- form 1 -->
+          <div ng-show="currentStep === 1">
+
+            <h2>基本情報入力</h2>
             <form action="">
-              <div class="md-textfield">
-                <input type="text" class="md-textfield-input">
-                <label class="md-textfield-label">メールアドレス</label>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">氏名</label>
+                </div>
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">氏名（ローマ字）</label>
+                </div>
               </div>
-              <div class="md-textfield">
-                <input type="password" class="md-textfield-input">
-                <label class="md-textfield-label">パスワード</label>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">生年月日</label>
+                </div>
+                <div class="md-radio required validate">
+                  <input class="md-radio-input" type="radio" name="gender" id="gender-1" checked>
+                  <label class="md-radio-label" for="gender-1">男</label>
+                  <input class="md-radio-input" type="radio" name="gender" id="gender-2">
+                  <label class="md-radio-label" for="gender-2">女</label>
+                  <input class="md-radio-input" type="radio" name="gender" id="gender-3">
+                  <label class="md-radio-label" for="gender-3">その他</label>
+                </div>
               </div>
-              <div class="md-checkbox">
-                <input class="md-checkbox-input" type="checkbox" id="registerlogin-auto">
-                <label class="md-checkbox-label" for="registerlogin-auto">次回から自動ログイン</label>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">メールアドレス</label>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">希望メール言語</option>
+                    <option value="1">日本語</option>
+                    <option value="2">英語</option>
+                  </select>
+                </div>
               </div>
-              <p class="register-top-box-forgot"><a href="pw_remind.html">パスワードをお忘れの方</a></p>
-              <a href="#" class="button">ログイン</a>
-              <a href="#" class="button button-facebook">Facebookでログイン</a>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="password" class="md-textfield-input">
+                  <label class="md-textfield-label">パスワード</label>
+                </div>
+                <div class="md-textfield required validate">
+                  <input type="password" class="md-textfield-input">
+                  <label class="md-textfield-label">パスワード（確認用）</label>
+                </div>
+              </div>
+              <div class="register-row register-add additional-target" ng-repeat="lang in languages track by $index">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box" input-style validate>
+                    <option value="" disabled selected style="display:none;">言語選択</option>
+                    <option value="{{type.value}}" ng-repeat="type in lang.types">{{type.name}}</option>
+                  </select>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box" input-style validate>
+                    <option value="" disabled selected style="display:none;">言語スキル選択</option>
+                    <option ng-repeat="level in lang.levels" value="{{level.value}}">{{level.name}}</option>
+                  </select>
+                </div>
+                <a href ng-if="$index >= 1" class="button button-outline button-delete"><span>削除</span></a>
+                <a href ng-if="$last" ng-click="addLanguage()" class="button button-outline button-add add-item"><span>他の言語を追加</span></a>
+              </div>
+              <div class="register-row register-add additional-target" ng-repeat="skill in skills track by $index">
+                <div class="md-select">
+                  <select name="" id="" class="md-select-box" input-style validate>
+                    <option value="" disabled selected style="display:none;">スキル区分</option>
+                    <option value="{{type.value}}" ng-repeat="type in skill.types">{{type.name}}</option>
+                  </select>
+                </div>
+                <div class="md-textfield">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">スキル名</label>
+                </div>
+                <a href ng-if="$index >= 1" class="button button-outline button-delete"><span>削除</span></a>
+                <a href ng-if="$last" ng-click="addSkill()" class="button button-outline button-add add-item"><span>他のスキルを追加</span></a>
+              </div>
+              <div class="register-row">
+                <div class="md-textarea">
+                  <textarea name="" class="md-textarea-input"></textarea>
+                  <label class="md-textarea-label">自己PR</label>
+                </div>
+              </div>
+              <div class="register-row register-add additional-target" ng-repeat="job in jobs track by $index">
+                <div class="md-select required validate" style="margin-right: 0;">
+                  <select name="" id="" class="md-select-box" validate input-style>
+                    <option value="" disabled selected style="display:none;">希望職種カテゴリ</option>
+                    <option ng-repeat="type in job.stypes" value="{{type.value}}">{{type.name}}</option>
+                  </select>
+                </div>
+                <a ng-if="$index >= 1"  href class="button button-outline button-delete"><span>削除</span></a>
+                <a ng-if="$last" href ng-click="addJob()" class="button button-outline button-add add-item"><span>他の希望職種を追加</span></a>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">TOEIC</label>
+                </div>
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">VERSANT</label>
+                </div>
+              </div>
+              <div class="register-row register-add additional-target" ng-repeat="area in areas track by $index">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box" input-style validate>
+                    <option value="" disabled selected style="display:none;">希望勤務地エリア</option>
+                    <option ng-repeat="location in area.locations" value="{{location.value}}">{{location.name}}</option>
+                  </select>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box" input-style validate>
+                    <option value="" disabled selected style="display:none;">希望勤務地詳細</option>
+                    <option ng-repeat="detail in area.details" value="{{detail.value}}">{{detail.name}}</option>
+                  </select>
+                </div>
+                <a href ng-if="$index >= 1" class="button button-outline button-delete"><span>削除</span></a>
+                <a href ng-if="$last" ng-click="addArea()" class="button button-outline button-add add-item"><span>他の希望職務地を追加</span></a>
+              </div>
+
+              <div class="register-row register-privacy">
+                <div class="md-checkbox">
+                  <input class="md-checkbox-input" type="checkbox" id="register-privacy">
+                  <label class="md-checkbox-label" for="register-privacy">利用規約・プライバシーポリシーに同意する</label>
+                </div>
+              </div>
+              <div class="register-next"><a href="" class="button cf-popup-open" ng-click="openPopUp()">入力内容を確認する</a></div>
             </form>
           </div>
-        </div>
+          <!-- End form 1 -->
 
-        <div class="register-contents">
-          <div class="register-flow">
-            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 1, 'is-complete':currentStep > 1}">
-              <span>STEP 1</span>
-              <p>会員情報入力</p>
-              <p class="register-flow-complete">会員登録完了！</p>
-            </div>
-            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 2, 'is-complete':currentStep > 2}">
-              <span>STEP 2</span>
-              <p>学歴情報入力</p>
-              <p class="register-flow-complete">入力OK！</p>
-            </div>
-            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 3, 'is-complete':currentStep > 3}">
-              <span>STEP 3</span>
-              <p>プロフィール入力</p>
-              <p class="register-flow-complete">入力OK！</p>
-            </div>
-            <div class="register-flow-step" ng-class="{'is-active' : currentStep === 4, 'is-complete':currentStep > 4}">
-              <span>STEP 4</span>
-              <p>職務経歴入力</p>
-              <p class="register-flow-complete">入力OK！</p>
-            </div>
-            <div class="register-flow-step" ng-class="{'is-complete':currentStep === 5}">
-              <span>STEP 5</span>
-              <p>レジュメ完成</p>
-              <p class="register-flow-complete">入力OK！</p>
-            </div>
+          <!-- Start form 2 -->
+          <div  ng-show="currentStep === 2">
+            <h2>学歴情報入力</h2>
+
+            <p class="register-note">学歴情報には、あなたが今までに通ったすべての学歴を記載してください。</p>
+
+            <form action="">
+              <div class="register-row">
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">高校名</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">高校卒業年月</label>
+                </div>
+                <div class="md-checkbox">
+                  <input class="md-checkbox-input" type="checkbox" id="register-drop-high">
+                  <label class="md-checkbox-label" for="register-drop-high">中退</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">大学所在地（国）</option>
+                    <option value="1">日本</option>
+                    <option value="2">アメリカ</option>
+                  </select>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">大学所在地（州／都道府県）</option>
+                    <option value="1">東京</option>
+                    <option value="2">埼玉</option>
+                  </select>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">大学卒業年月</label>
+                </div>
+                <div class="md-checkbox">
+                  <input class="md-checkbox-input" type="checkbox" id="register-drop-univ">
+                  <label class="md-checkbox-label" for="register-drop-univ">中退</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">専攻カテゴリ</option>
+                    <option value="1">選択肢</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">専攻</option>
+                    <option value="1">選択肢</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">専攻正式名称</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">学位</option>
+                    <option value="1">選択肢</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">成績／GPA</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-textarea required validate">
+                  <textarea name="" class="md-textarea-input"></textarea>
+                  <label class="md-textarea-label">学歴詳細</label>
+                </div>
+              </div>
+
+              <div class="register-additional-education additional-target">
+                <h2>追加学歴情報入力</h2>
+                <div class="register-row">
+                  <div class="md-checkbox">
+                    <input class="md-checkbox-input" type="checkbox" id="register-drop-univ-01">
+                    <label class="md-checkbox-label" for="register-drop-univ-01">交換留学</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">大学所在地（国）</option>
+                      <option value="1">日本</option>
+                      <option value="2">アメリカ</option>
+                    </select>
+                  </div>
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">大学所在地（州／都道府県）</option>
+                      <option value="1">東京</option>
+                      <option value="2">埼玉</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textfield required validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">大学卒業年月</label>
+                  </div>
+                  <div class="md-checkbox">
+                    <input class="md-checkbox-input" type="checkbox" id="register-drop-univ-02">
+                    <label class="md-checkbox-label" for="register-drop-univ-02">中退</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">専攻カテゴリ</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">専攻</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textfield required validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">専攻正式名称</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">学位</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                  <div class="md-textfield validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">成績／GPA</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textarea required validate">
+                    <textarea name="" class="md-textarea-input"></textarea>
+                    <label class="md-textarea-label">学歴詳細</label>
+                  </div>
+                </div>
+                <div class="register-add-education">
+                  <a href="" class="button button-delete"><span>この学歴を削除</span></a>
+                  <a href="" class="button button-outline button-add add-item"><span>学歴を追加</span></a>
+                </div>
+              </div>
+
+              <div class="register-next"><a href ng-click="nextStep(currentStep)" class="button">次のステップへ</a></div>
+            </form>
           </div>
-            <div data-smart-include="app/cfn/views/templates/form_01.tpl.html" class="placeholder-form1"></div>
-            <div data-smart-include="app/cfn/views/templates/form_02.tpl.html" class="placeholder-form2"></div>
-            <div data-smart-include="app/cfn/views/templates/form_03.tpl.html" class="placeholder-form3"></div>
-            <div data-smart-include="app/cfn/views/templates/form_04.tpl.html" class="placeholder-form4"></div>
-            <div data-smart-include="app/cfn/views/templates/form_05.tpl.html" class="placeholder-form5"></div>
-        </div>
+          <!-- End form 2 -->
+          <!-- Start form 3 -->
+          <div  ng-show="currentStep === 3">
+            <h2>プロフィール情報入力</h2>
+            <form action="">
+              <div class="register-row register-add additional-target">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">連絡先TEL（国番号）</option>
+                    <option value="1">日本（+81）</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">連絡先TEL</label>
+                </div>
+                <a href="" class="button button-outline button-delete"><span>削除</span></a>
+                <a href="" class="button button-outline button-add add-item"><span>他のTELを追加</span></a>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">郵便番号</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">国</option>
+                    <option value="1">日本</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">州／都道府県</option>
+                    <option value="1">東京</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">市区町村</label>
+                </div>
+                <div class="md-textfield required validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">住所その他</label>
+                </div>
+              </div>
 
+                          
+              <div class="register-row">
+                <div class="md-checkbox">
+                  <input class="md-checkbox-input" type="checkbox" id="register-address">
+                  <label class="md-checkbox-label" for="register-address">現住所と異なる連絡先住所がある方</label>
+                </div>
+              </div>
+
+              
+              <div class="register-row">
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">郵便番号</label>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-select validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">国</option>
+                    <option value="1">日本</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <div class="md-select validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">州／都道府県</option>
+                    <option value="1">東京</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+              </div>
+              <div class="register-row">
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">市区町村</label>
+                </div>
+                <div class="md-textfield validate">
+                  <input type="text" class="md-textfield-input">
+                  <label class="md-textfield-label">住所その他</label>
+                </div>
+              </div>
+                          
+
+              <div class="register-row additional-target">
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">労働許可（国）</option>
+                    <option value="1">日本</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <div class="md-select required validate">
+                  <select name="" id="" class="md-select-box">
+                    <option value="" disabled selected style="display:none;">労働許可区分</option>
+                    <option value="1">選択肢</option>
+                    <option value="2">選択肢</option>
+                  </select>
+                </div>
+                <a href="" class="button button-outline button-delete"><span>削除</span></a>
+                <a href="" class="button button-outline button-add add-item"><span>他の労働許可を追加</span></a>
+              </div>
+
+              <div class="register-row">
+                <div class="md-radio">
+                  <input class="md-radio-input" type="radio" name="job-experience" id="job-experience-1" checked>
+                  <label class="md-radio-label" for="job-experience-1">職務経歴あり</label>
+                  <input class="md-radio-input" type="radio" name="job-experience" id="job-experience-2">
+                  <label class="md-radio-label" for="job-experience-2">職務経歴なし</label>
+                </div>
+              </div>
+              <p style="margin-left: 15%;">※「職務経歴」は登録完了後にマイページから再度入力可能です。<br>※「職務経歴」なしを選択すると、こちらで登録が完了します。</p>
+
+              <div class="register-next"><a href ng-click="nextStep(currentStep)" class="button">次のステップへ</a></div>
+            </form>
+          </div>
+          <!-- End form 3 -->
+
+          <!-- Start form 4 -->
+          <div ng-show="currentStep === 4">
+            <h2>職務経歴入力</h2>
+            <form action="">
+              <div class="additional-target">
+                <div class="register-row">
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">職務経験年数</option>
+                      <option value="1">1年未満</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textfield validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">現年収</label>
+                  </div>
+                  <div class="md-textfield validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">希望年収</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textfield required validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">会社名</label>
+                  </div>
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">業種</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textfield required validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">事業内容</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textfield required validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">ポジション名</label>
+                  </div>
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">雇用形態</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="register-row additional-target">
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">勤務期間開始</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">勤務期間終了</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-select required validate">
+                    <select name="" id="" class="md-select-box">
+                      <option value="" disabled selected style="display:none;">職種</option>
+                      <option value="1">選択肢</option>
+                      <option value="2">選択肢</option>
+                    </select>
+                  </div>
+                  <div class="md-textfield validate">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">キャリアレベル</label>
+                  </div>
+                </div>
+                <div class="register-row">
+                  <div class="md-textarea">
+                    <textarea name="" class="md-textarea-input"></textarea>
+                    <label class="md-textarea-label">職務経歴詳細</label>
+                  </div>
+                </div>
+                <div class="register-add-education">
+                  <a href="" class="button button-delete"><span>職務経歴を削除</span></a>
+                  <a href="" class="button button-outline button-add add-item"><span>職務経歴を追加</span></a>
+                </div>
+              </div>
+
+            <h2>ブロック企業設定</h2>
+            <p class="register-block-lead">プロフィールを公開したくない記号がある場合は、正式な社名で検索しご指定ください。<br>
+            設定企業にはプロフィールを閲覧されることはありません。</p>
+
+              <div class="register-row" style="background-color: #fff;">
+                  <div class="md-textfield" style="margin-right: 0;">
+                    <input type="text" class="md-textfield-input">
+                    <label class="md-textfield-label">会社名</label>
+                  </div>
+              </div>
+              <div class="register-block-list">
+                <p>ブロック設定中企業一覧</p>
+                <ul>
+                  <li>株式会社フランジア・ジャパン<a href="" class="button button-outline button-delete"><span>解除</span></a></li>
+                  <li>株式会社フランジア・ジャパン<a href="" class="button button-outline button-delete"><span>解除</span></a></li>
+                </ul>
+              </div>
+              <div class="register-next"><a href ng-click="nextStep(currentStep)" class="button">次のステップへ</a></div>
+            </form>
+          </div>
+          <!-- End form 4 -->
+
+          <!-- Start form 5 -->
+          <div ng-show="currentStep === 5">
+            <h2>レジュメ登録完了</h2>
+
+            <p class="register-thanks">会員登録が完了し、レジュメ情報も完成しました！<br>キャリアフォーラムの参加、参加企業へのエントリーが行えます。</p>
+
+            <div class="register-next"><a href="index.html" class="button">サイトTOPへ</a></div>
+          </div>
+          <!-- End form 5 -->
+        </div>
       </div>
     </div>
-
+  </div>
   <div class="cf-overlay"></div>
   <div class="cf-popup cf-popup-01">
   </div>

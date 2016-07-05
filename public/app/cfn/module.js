@@ -29,7 +29,9 @@ define([
             templateUrl: 'app/cfn/views/register_content.html',
             resolve: {
               deps: $couchPotatoProvider.resolveDependencies([
-                'cfn/controllers/register-ctrl'
+                'cfn/controllers/register-ctrl',
+                'cfn/directives/input-style',
+                'cfn/directives/validate'
               ])
             }
           }
