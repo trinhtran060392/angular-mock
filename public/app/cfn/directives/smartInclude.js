@@ -1,4 +1,4 @@
-define(['layout/module'], function (module) {
+define(['cfn/module'], function (module) {
 	'use strict';
 	module.registerDirective('smartInclude', [function () {
 

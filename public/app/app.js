@@ -10,7 +10,6 @@ define([
     'scs.couch-potato',
     'ui.router',
 
-    'app.layout',
     'app.cfn'
   ]);
 
