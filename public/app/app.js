@@ -1,19 +1,12 @@
+
 'use strict';
 
-define([
-  'angular',
-  'angular-couch-potato',
-  'angular-ui-router'
-], function (ng, couchPotato) {
+angular.module('app', ['ui.router', 'app.cfn']).config(config);
 
-  var app = ng.module('app', [
-    'scs.couch-potato',
-    'ui.router',
-
-    'app.cfn'
-  ]);
-
-  couchPotato.configureApp(app);
-
-  return app;
-})
+function config($urlRouterProvider) {
+  $urlRouterProvider.otherwise(function($injector) {
+    var $state = $injector.get("$state");
+    $state.go('app.cfn');
+  });
+  
+}

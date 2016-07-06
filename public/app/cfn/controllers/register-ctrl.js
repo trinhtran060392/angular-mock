@@ -1,8 +1,7 @@
-define(['cfn/module'], function (module) {
   'use strict';
+  angular.module('app.cfn').controller('RegisterCtrl', RegisterCtrl);
 
-  module.registerController('RegisterCtrl', ['$scope', '$templateRequest', '$compile', function ($scope, $templateRequest, $compile) {
-
+  function RegisterCtrl($scope, $templateRequest, $compile) {
     //handle steps
     $scope.currentStep = 1;
 
@@ -137,6 +136,4 @@ define(['cfn/module'], function (module) {
         openPopUp();
       });
     };
-
-  }]);
-});
+  }
