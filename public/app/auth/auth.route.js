@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app.cfn', ['ui.router']).config(config);
+angular.module('app.auth', ['ui.router']).config(config);
 
 function config($stateProvider) {
 
@@ -9,15 +9,15 @@ function config($stateProvider) {
     abstract: true,
     views: {
       'root': {
-        templateUrl: 'app/cfn/views/layout.tpl.html'
+        templateUrl: 'app/auth/views/layout.tpl.html'
       }
     }
   }).
-  state('app.cfn', {
+  state('app.auth', {
     url: '/home',
     views: {
       "content@app": {
-        templateUrl: 'app/cfn/views/index_content.html'
+        templateUrl: 'app/auth/views/index_content.html'
       }
     }
   }).
@@ -26,7 +26,7 @@ function config($stateProvider) {
     views: {
       "content@app": {
         controller: 'RegisterCtrl',
-        templateUrl: 'app/cfn/views/register_content.html'
+        templateUrl: 'app/auth/views/register_content.html'
       }
     }
   }).
@@ -35,7 +35,7 @@ function config($stateProvider) {
     views: {
       "root": {
         controller: 'RegisterCtrl',
-        templateUrl: 'app/cfn/views/m0018_login.html'
+        templateUrl: 'app/auth/views/m0018_login.html'
       }
     }
   })

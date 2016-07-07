@@ -1,5 +1,5 @@
   'use strict';
-  angular.module('app.cfn').controller('RegisterCtrl', RegisterCtrl);
+  angular.module('app.auth').controller('RegisterCtrl', RegisterCtrl);
 
   function RegisterCtrl($scope, $templateRequest, $compile) {
     //handle steps
