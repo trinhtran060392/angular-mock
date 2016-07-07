@@ -1,7 +1,7 @@
 
 'use strict';
 
-angular.module('app', ['ui.router', 'app.cfn']).config(config);
+angular.module('app', ['ui.router', 'app.cfn', 'ngMessages']).config(config);
 
 function config($urlRouterProvider) {
   $urlRouterProvider.otherwise(function($injector) {

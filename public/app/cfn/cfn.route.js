@@ -29,5 +29,14 @@ function config($stateProvider) {
         templateUrl: 'app/cfn/views/register_content.html'
       }
     }
+  }).
+  state('m0018-login', {
+    url: '/m0018-login',
+    views: {
+      "root": {
+        controller: 'RegisterCtrl',
+        templateUrl: 'app/cfn/views/m0018_login.html'
+      }
+    }
   })
 }

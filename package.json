@@ -10,5 +10,8 @@
     "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server -a 0.0.0.0 -p 9002 -c-1"
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.6"
   }
 }
