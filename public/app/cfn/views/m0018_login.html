@@ -8,24 +8,24 @@
         </div>     
         <div class="panel-body padding-top-30 blanchedalmond-color" >
         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-        <form name="loginform" class="form-horizontal">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input  type="text" name="email" ng-model="form.email" class="form-control" value="" placeholder="メールアドレス" ng-pattern="/^.+@.+\..+$/" required>   
-          </div>
-          <div ng-messages="loginform.email.$error">
-            <div ng-message="pattern">
-              <span class="error-mess">Wrong format</span>
+          <form name="loginform" class="form-horizontal">
+            <div class="input-group">
+              <span class="input-group-addon" ng-class='{"error-input": loginform.email.$error && loginform.email.$touched, "success-input" : loginform.email.$valid}'><i class="glyphicon glyphicon-envelope"></i></span>
+              <input  type="text" name="email" ng-class='{"error-input": loginform.email.$error && loginform.email.$touched, "success-input" : loginform.email.$valid}' ng-model="form.email" class="form-control" value="" placeholder="メールアドレス" ng-pattern="/^.+@.+\..+$/" required>   
             </div>
-            <div ng-message="required">
-              <span class="error-mess">Email field is required</span>
+            <div ng-messages="loginform.email.$touched && loginform.email.$error">
+              <div ng-message="pattern">
+                <span class="error-mess">Wrong format</span>
+              </div>
+              <div ng-message="required">
+                <span class="error-mess">Email field is required</span>
+              </div>
             </div>
-          </div>
             <div class="input-group margin-top-25">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input type="password" class="form-control" ng-model="form.password" name="password" placeholder="パスワード" ng-pattern="/^(?=.*[a-zA-Z])(?=.*[0-9])/" required>
+              <span class="input-group-addon" ng-class='{"error-input": loginform.password.$error && loginform.password.$touched, "success-input" : loginform.password.$valid}'><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="password" class="form-control" ng-class='{"error-input": loginform.password.$error && loginform.password.$touched, "success-input" : loginform.password.$valid}' ng-model="form.password" name="password" placeholder="パスワード" ng-pattern="/^(?=.*[a-zA-Z])(?=.*[0-9])/" required>
             </div>
-            <div ng-messages="loginform.password.$error">
+            <div ng-messages="loginform.password.$touched && loginform.password.$error">
               <div ng-message="required">
                 <span class="error-mess">Password field is required</span>
               </div>
@@ -33,25 +33,22 @@
                 <span class="error-mess">Wrong format</span>
               </div>
             </div>
-              <div class="form-group margin-top-25 margin-bottom-25">
-                <div class="col-sm-12 controls text-align-center">
-                  <a id="btn-login" href-void class="btn btn-success" style="width: 50%;">確認ボタン</a>
+            <div class="form-group margin-top-25 margin-bottom-25">
+              <div class="col-sm-12 controls text-align-center">
+                <a id="btn-login" href-void class="btn btn-success" style="width: 50%;">確認ボタン</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div class="change-pass text-align-center">
+                パスワード変更リンク
+                <a href>Here</a>
                 </div>
               </div>
-                <div class="form-group">
-                  <div class="col-md-12 control">
-                    <div class="change-pass text-align-center">
-                    パスワード変更リンク
-                    <a href>
-                        Here
-                    </a>
-                    </div>
-                </div>
-              </div>    
+            </div>    
           </form>     
-          </div>                     
-        </div>  
+        </div>                     
+      </div>  
     </div>
-
   </div>
 </div>
